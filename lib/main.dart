@@ -90,7 +90,7 @@ class Kitesurf extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 46,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Color(0xFF074868),
                       ),
                     ),
                     SizedBox(height: 26),
@@ -118,6 +118,7 @@ class Kitesurf extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
+                        backgroundColor: Color(0xFF64C8C8), // Modifier la couleur ici
                       ),
                     ),
                   ],
