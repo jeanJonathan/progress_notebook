@@ -130,7 +130,12 @@ class Kitesurf extends StatelessWidget {
                         backgroundColor: Color(0xFF64C8C8), // Modifier la couleur ici
                       ),
                     ),
-
+                    SizedBox(height: 16),
+                    Positioned(
+                      top: 250,
+                      right: 5,
+                      child: Icon(Icons.arrow_forward_ios, size: 50),
+                    ),
                   ],
                 ),
               ),
