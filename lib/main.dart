@@ -16,7 +16,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: MaterialColor(
+        0xFF074868,
+        <int, Color>{
+          50: Color(0xFF074868),
+          100: Color(0xFF074868),
+          200: Color(0xFF074868),
+          300: Color(0xFF074868),
+          400: Color(0xFF074868),
+          500: Color(0xFF074868),
+          600: Color(0xFF074868),
+          700: Color(0xFF074868),
+          800: Color(0xFF074868),
+          900: Color(0xFF074868),
+        },
+      ),
       ),
       home: Kitesurf(),
       routes: {
@@ -69,11 +83,6 @@ class Kitesurf extends StatelessWidget {
           },
           child: Stack(
             children: [
-              Positioned(
-                top: 250,
-                right: 5,
-                child: const Icon(Icons.arrow_forward_ios, size: 50),
-              ),
               Image.asset('assets/kitesurf.jpg',
                 fit: BoxFit.cover,
                 width: double.infinity,
@@ -90,7 +99,7 @@ class Kitesurf extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 46,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF074868),
+                        color: Color(0xFF64C8C8),
                       ),
                     ),
                     SizedBox(height: 26),
@@ -121,6 +130,7 @@ class Kitesurf extends StatelessWidget {
                         backgroundColor: Color(0xFF64C8C8), // Modifier la couleur ici
                       ),
                     ),
+
                   ],
                 ),
               ),

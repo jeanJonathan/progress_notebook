@@ -43,6 +43,52 @@ class Surf extends StatelessWidget {
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,),
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.35,
+              left: 16,
+              right: 16,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'SURF',
+                    style: TextStyle(
+                      fontSize: 46,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF64C8C8),
+                    ),
+                  ),
+                  SizedBox(height: 26),
+                  Text(
+                    "Let's while",
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Action du bouton
+                    },
+                    child: Text(
+                      'VOIR LES ETAPES',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 32,
+                        vertical: 16,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      backgroundColor: Color(0xFF64C8C8), // Modifier la couleur ici
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
