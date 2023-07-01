@@ -74,7 +74,10 @@ class Kitesurf extends StatelessWidget {
                 right: 5,
                 child: const Icon(Icons.arrow_forward_ios, size: 50),
               ),
-              Image.asset('assets/kitesurf.jpg'), // Ajout de l'image kitesurf.jpg
+              Image.asset('assets/kitesurf.jpg',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,), // Ajout de l'image kitesurf.jpg
             ],
           ),
         ),
