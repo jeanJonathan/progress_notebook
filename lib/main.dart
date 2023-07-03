@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Wingfoil.dart';
 import 'package:progress_notebook/parametre_screen.dart';
 import 'package:progress_notebook/menu_screen.dart';
+import 'package:mysql1/mysql1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +42,19 @@ class MyApp extends StatelessWidget {
   }
 }
 class Kitesurf extends StatelessWidget {
+  // Pour etablir la connexion à la base de données
+  Future<MySqlConnection> connectToDatabase() async {
+    var settings = new ConnectionSettings(
+      host: 'localhost',
+      port: 3306,
+      user: 'root',
+      password: '',
+      db: 'bd_cahier_progression',
+    );
+    var conn = await MySqlConnection.connect(settings);
+    return conn;
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -134,7 +148,8 @@ class Kitesurf extends StatelessWidget {
                     Positioned(
                       top: 250,
                       right: 5,
-                      child: Icon(Icons.arrow_forward_ios, size: 50),
+                      child: Icon(Icons.arrow_forward_ios, size: 50,
+                        color: Color(0xFF074868)),
                     ),
                   ],
                 ),

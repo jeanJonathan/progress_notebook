@@ -30,20 +30,10 @@ class Wingfoil extends StatelessWidget {
               },
             ),
           ],
-          title: const Text('Wingfoil'),
+          title: const Text(''),
         ),
         body: Stack(
           children: [
-            const Positioned(
-              top: 250,
-              left: 5,
-              child: Icon(Icons.arrow_back_ios, size: 50),
-            ),
-            const Positioned(
-              top: 250,
-              right: 5,
-              child: Icon(Icons.arrow_forward_ios, size: 50),
-            ),
             Image.asset('assets/wingfoil.jpg',
               fit: BoxFit.cover,
               width: double.infinity,
@@ -90,6 +80,19 @@ class Wingfoil extends StatelessWidget {
                       ),
                       backgroundColor: Color(0xFF64C8C8), // Modifier la couleur ici
                     ),
+                  ),
+                  SizedBox(height: 16),
+                  Positioned(
+                    top: 250,
+                    right: 5,
+                    child: Icon(Icons.arrow_forward_ios, size: 50,
+                        color: Color(0xFF074868)),
+                  ),
+                  Positioned(
+                    top: 250,
+                    right: 5,
+                    child: Icon(Icons.arrow_back_ios, size: 50,
+                        color: Color(0xFF074868)),
                   ),
                 ],
               ),

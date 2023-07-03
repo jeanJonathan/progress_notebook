@@ -30,7 +30,7 @@ class Surf extends StatelessWidget {
               },
             ),
           ],
-          title: const Text('Surf'),
+          title: const Text(''),
         ),
         body: Stack(
           children: [
@@ -85,6 +85,12 @@ class Surf extends StatelessWidget {
                       ),
                       backgroundColor: Color(0xFF64C8C8), // Modifier la couleur ici
                     ),
+                  ),
+                  Positioned(
+                    top: 250,
+                    right: 5,
+                    child: Icon(Icons.arrow_back_ios, size: 50,
+                        color: Color(0xFF074868)),
                   ),
                 ],
               ),
