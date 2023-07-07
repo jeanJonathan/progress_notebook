@@ -6,8 +6,15 @@ import 'package:mysql1/mysql1.dart';
 import 'package:mysql_client/mysql_client.dart';
 import 'package:angel3_orm_mysql/angel3_orm_mysql.dart';
 import 'package:logging/logging.dart';
+//Importation de firebase
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
