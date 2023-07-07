@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "19883841118",
+    "project_id": "progressnotebook-37bf1",
+    "storage_bucket": "progressnotebook-37bf1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19883841118:android:a4b1498ceed8521354c6cf",
+        "android_client_info": {
+          "package_name": "com.example.progress_notebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19883841118-pc7rn5d8fjas5u4op7t51jhcf7irvaf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOb4IhYncpDNNNhQzn_OPlTbzpV8Gj3ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19883841118-pc7rn5d8fjas5u4op7t51jhcf7irvaf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
