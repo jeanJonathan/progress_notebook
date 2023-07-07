@@ -3,6 +3,9 @@ import 'Wingfoil.dart';
 import 'package:progress_notebook/parametre_screen.dart';
 import 'package:progress_notebook/menu_screen.dart';
 import 'package:mysql1/mysql1.dart';
+import 'package:mysql_client/mysql_client.dart';
+import 'package:angel3_orm_mysql/angel3_orm_mysql.dart';
+import 'package:logging/logging.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,21 +45,59 @@ class MyApp extends StatelessWidget {
   }
 }
 class Kitesurf extends StatelessWidget {
+  Future<void> fetchData() async {
+    var settings = ConnectionSettings(
+      host: " 10.188.99.5",
+      port: 3306,
+      user: "root",
+      password: "",
+      db: "bd_cahier_progression",
+      timeout: Duration(seconds: 10),
+    );
+
+    var conn = await MySqlConnection.connect(settings);
+    var logger = Logger('orm_mysql');
+    var executor = MySqlExecutor(conn as MySQLConnection, logger: logger);
+    try {
+      var result = await executor.query('SELECT * FROM etapes', <dynamic>[] as String,true as Map<String, dynamic>);
+      for (var row in result) {
+        print(row);
+      }
+    } catch (e) {
+      print('Error: $e');
+    } finally {
+      await conn.close();
+    }
+  }
   // Pour etablir la connexion à la base de données
-  Future<MySqlConnection> connectToDatabase() async {
-    var settings = new ConnectionSettings(
-      host: 'localhost',
+  /*Future<MySqlConnection> connectToDatabase() async {
+    var settings = ConnectionSettings(
+      host: '10.188.99.5',
       port: 3306,
       user: 'root',
       password: '',
       db: 'bd_cahier_progression',
+      //useSSL: true, // Activer SSL
     );
     var conn = await MySqlConnection.connect(settings);
+    var result = await conn.query('SELECT * FROM etapes');
+    for (var row in result) {
+      print(row);
+    }
     return conn;
   }
-
+  Future<void> fetchData() async {
+    var connection = await connectToDatabase();
+    // Utilisez les données récupérées de la base de données ici
+    var result = await connection.query('SELECT * FROM etapes');
+    for (var row in result) {
+      print(row);
+    }
+  }
+*/
   @override
   Widget build(BuildContext context) {
+    //fetchData(); // Appel de la méthode pour récupérer les données lors de la création du widget
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, '/menu');
@@ -149,7 +190,7 @@ class Kitesurf extends StatelessWidget {
                       top: 250,
                       right: 5,
                       child: Icon(Icons.arrow_forward_ios, size: 50,
-                        color: Color(0xFF074868)),
+                          color: Color(0xFF074868)),
                     ),
                   ],
                 ),
